@@ -1,0 +1,63 @@
+﻿@model Playground.Models.Pokemon.PokemonIndexModel
+@{
+    var previous = Model.pageNumber - 1;
+    var next = Model.pageNumber + 1;
+}
+
+<div class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <p class="ml-3">Count: @Model.pokemonList.Count</p>
+        </div>
+        <div class="row">
+            @foreach (var pokemon in Model.pokemonList)
+            {
+                <div class="col-md-3">
+                    <div class="card mb-4 shadow-sm" style="border: 2px solid #ef5350; border-radius: 12px; ">
+                        <img class="card-img-top" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="@pokemon.Sprites.FrontDefault" data-holder-rendered="true">
+                        <hr />
+                        <div class="card-body">
+                            <p class="card-text">@pokemon.Name</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group" data-id="@pokemon.Id">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary view-pokemon">View</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div class="row justify-content-md-center">
+    <div class="align-items-center">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                @if (Model.pageNumber != 1)
+                {
+                    <li class="page-item"><a class="page-link" data-id="@previous" href="#">Previous</a></li>
+                }
+                @for (int i = 1; i <= Model.pages; i++)
+                {
+                    if (Model.pageNumber == i)
+                    {
+                        <li class="page-item"><a class="page-link bg-info" data-id="@i" href="#">@i</a></li>
+                    }
+                    else
+                    {
+                        <li class="page-item"><a class="page-link" data-id="@i" href="#">@i</a></li>
+                    }
+
+                    @if (i == Model.pages && Model.pageNumber != Model.pages)
+                    {
+                        <li class="page-item"><a class="page-link" data-id="@next" href="#">Next</a></li>
+                    }
+                }
+            </ul>
+        </nav>
+    </div>
+
+</div>
+
+

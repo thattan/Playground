@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "";
+}
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js">
+</script>
+@*
+<script src="~/js/DataTableTest.js" type="text/javascript"></script>*@
+
+<script>
+    $(function () {
+        loadTable();
+
+        $("#test-btn").on("click", function () {
+            alert("test 2");
+        });
+
+        function loadTable() {
+            $('#example').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": {
+                    "url": "Call",
+                    "type": "POST"
+                },
+                "columns": [
+                    { "data": "test1", "name": "test1", "autoWidth": true },
+                    { "data": "test2", "name": "test2", "autoWidth": true },
+                    { "data": "test3", "name": "test3", "autoWidth": true }
+                ]
+            });
+        };
+    });
+</script>
+
+<h1>Test asdf</h1>
+<button id="test-btn">Test</button>
+
+<table id="example" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>CustomerID</th>
+            <th>Name</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+</table>

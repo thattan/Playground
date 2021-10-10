@@ -1,0 +1,51 @@
+﻿@model Playground.Models.Pokemon.PokemonIndexModel
+
+<input type="hidden" asp-for="activeGeneration"/>
+<input type="hidden" asp-for="pageNumber" />
+<div class="row">
+    <div class="input-group mb-3 ml-3">
+        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" style="max-width: 300px"
+               aria-describedby="search-addon" id="search"/>
+        <button type="button" class="btn btn-outline-primary search-pokemon">search</button>
+    </div>
+</div>
+<div class="row">
+    <ul class="nav nav-tabs ml-3">
+        @for (int i = 1; i <= 8; i++)
+        {
+            @if (Model.activeGeneration == i)
+            {
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/Pokemon/Index/@i">Generation @i</a>
+                </li>
+            }
+            else
+            {
+                <li class="nav-item generation">
+                    <a class="nav-link" href="/Pokemon/Index/@i">Generation @i</a>
+                </li>
+            }
+
+        }
+    </ul>
+</div>
+<div id="loading">
+    <div class="d-flex justify-content-center mt-3">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+</div>
+<div id="pokemon-list">
+
+</div>
+
+<div id="pokemon-modal-content">
+
+</div>
+
+
+
+@section Scripts {
+    <script src="~/js/pokemon.js"></script>
+}

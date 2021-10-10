@@ -1,0 +1,42 @@
+﻿
+<title>Line Draw</title>
+
+<style>
+    body {
+        width: 100%;
+    }
+
+    .line-area {
+        position: relative;
+        background-color: #fff;
+        height: 850px;
+        border: 2px solid #212529;
+        border-radius: 12px;
+        padding: 5px;
+    }
+
+    .line {
+        background-color: black;
+        position: absolute;
+        height: 2px;
+    }
+
+</style>
+
+<div class="row">
+    <div class="btn-group ml-1 mb-2">
+        <button class="btn btn-primary" id="draw-btn">Draw</button>
+        <button class="btn btn-secondary ml-2 clear-btn">Clear</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 line-area">
+        <div class="circle" style="border-radius: 50%; height: 25px; width: 25px; background-color: black; position: absolute; left: 66.5px; top: 81.5px;"></div>
+        <div class="circle" style="border-radius: 50%; height: 25px; width: 25px; background-color: black; position: absolute; left: 218.5px; top: 73.5px;"></div>
+        <div class="line" style="width: 466px; top: 283px; left: 791.5px; transform: rotate(-168.61deg);"></div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="/js/CirclePath.js"></script>
+}
