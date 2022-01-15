@@ -22,6 +22,8 @@ namespace Playground.Controllers
 
         public async Task<IActionResult> Index(int id = 1)
         {
+
+
             try
             {
                 Generation gen = await pokeClient.GetResourceAsync<Generation>(id);
