@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Playground.Data;
+using Playground.Models;
 using Playground.Models.Pokemon;
 using PokeApiNet;
 using System;
@@ -13,17 +15,27 @@ namespace Playground.Controllers
 {
     public class PokemonController : Controller
     {
-        static readonly CancellationTokenSource s_cts = new CancellationTokenSource();
         PokeApiClient pokeClient;
-        public PokemonController()
+        private readonly ApplicationDbContext _context;
+
+        public PokemonController(ApplicationDbContext context)
         {
             pokeClient = new PokeApiClient();
+            _context = context;
         }
 
         public async Task<IActionResult> Index(int id = 1)
         {
+            var date = DateTime.Now;
+            _context.Students.Add(new Student() {
+                EnrollmentDate = date,
+                LastName = "TEST Tyler",
+                FirstMidName = "TEST"
+            });
 
+            var students = _context.Students.Where(x => x.LastName == "TEST Tyler");
 
+            _context.SaveChanges();
             try
             {
                 Generation gen = await pokeClient.GetResourceAsync<Generation>(id);

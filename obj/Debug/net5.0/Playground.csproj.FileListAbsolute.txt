@@ -10,7 +10,6 @@ C:\Users\tyler\Desktop\Coding2021\Playground\bin\Debug\net5.0\ref\Playground.dll
 C:\Users\tyler\Desktop\Coding2021\Playground\bin\Debug\net5.0\Playground.pdb
 C:\Users\tyler\Desktop\Coding2021\Playground\bin\Debug\net5.0\Playground.Views.dll
 C:\Users\tyler\Desktop\Coding2021\Playground\bin\Debug\net5.0\Playground.Views.pdb
-C:\Users\tyler\Desktop\Coding2021\Playground\obj\Debug\net5.0\Playground.csproj.AssemblyReference.cache
 C:\Users\tyler\Desktop\Coding2021\Playground\obj\Debug\net5.0\Playground.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\tyler\Desktop\Coding2021\Playground\obj\Debug\net5.0\Playground.AssemblyInfoInputs.cache
 C:\Users\tyler\Desktop\Coding2021\Playground\obj\Debug\net5.0\Playground.AssemblyInfo.cs
