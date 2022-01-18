@@ -1,0 +1,10 @@
+﻿Data Stuff:
+Entity Framework Setup: https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro?view=aspnetcore-6.0
+Choose where migrations are stored: https://entityframework.net/knowledge-base/40696305/how-to-change-the-output-folder-for-migrations-with-asp-net-core
+
+Organization Crud:
+Organization Index Page w/ list of organizations
+Add Organization Page
+Update Organization Page with add org users and edit org users
+Add Master list of Benefits from Org Index page 
+Add Benefits to Org on Org update page
