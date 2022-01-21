@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ll9U3GS904/5vWV21Nwnx6ODaVU6H5+8nUbYKxIOBIFbK0ZOeXGgSZw2pQFw6uOoylh3b9nbCn0GP2ksasmudw==",
+  "dgSpecHash": "9lhH4peolTs2e0WmTHKirfh37ACIPwspewRe9zRcyzz30CdYZOEnG4U4omB/KwblpUr+9Z+G4QfUFomNVIXP8w==",
   "success": true,
   "projectFilePath": "C:\\Users\\tyler\\Desktop\\Coding2021\\Playground\\Playground.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\tyler\\.nuget\\packages\\bogus\\34.0.1\\bogus.34.0.1.nupkg.sha512",
     "C:\\Users\\tyler\\.nuget\\packages\\handlebars.net\\2.0.9\\handlebars.net.2.0.9.nupkg.sha512",
     "C:\\Users\\tyler\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\tyler\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
@@ -46,6 +47,7 @@
     "C:\\Users\\tyler\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\tyler\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\tyler\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\tyler\\.nuget\\packages\\moment.js\\2.29.1\\moment.js.2.29.1.nupkg.sha512",
     "C:\\Users\\tyler\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\tyler\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\tyler\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",

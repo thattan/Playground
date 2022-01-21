@@ -6,14 +6,22 @@
 
 <script src="../Scripts/Organization.js"></script>
 
-<h1>Organizations</h1>
+<div class="row">
+    <div class="col-11">
+        <h1>Organizations</h1>
+    </div>
+    <div class="col-1">
+        <a class="btn btn-primary" asp-controller="Organization" asp-action="Add">Add</a>
+    </div>
+</div>
+
 
 <div class="row">
     <div class="col">
-        <table id="OrganizationTable" class="display" style="width:100%">
+        <table id="OrganizationTable" class="display table table-striped table-bordered" style="width:100%">
             <thead>
                 <tr>
-                    <th>OrganizationId</th>
+                    <th>Id</th>
                     <th>Name</th>
                     <th>Mission</th>
                     <th>Created Date</th>

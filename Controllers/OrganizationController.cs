@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Bogus;
+using Microsoft.AspNetCore.Mvc;
 using Playground.Data;
 using Playground.Models;
+using Playground.Models.Organization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,34 +47,35 @@ namespace Playground.Controllers
                 int recordsTotal = 0;
 
                 // Getting all Customer data  
-
-                var testData = new List<DataTableTestModel>();
-                for (int i = 0; i < 10; i++)
-                {
-                    testData.Add(new DataTableTestModel()
-                    {
-                        test1 = "test row " + i,
-                        test2 = "test2 row " + i,
-                        test3 = "test3 row " + i
-                    });
-                }
+                var list = _context.Organizations.ToList();
+                //var list2 = new List<OrganizationModel>();
+                //foreach (var item in list)
+                //{
+                //    list2.Add(new OrganizationModel()
+                //    {
+                //        Id = item.Id.ToString(),
+                //        Name = item.Name,
+                //        Mission = item.Mission,
+                //        CreatedDate = item.CreatedDate
+                //    }); 
+                //}
 
 
                 //Sorting  
                 if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDirection)))
                 {
-                    //testData = testData.OrderBy(sortColumn + " " + sortColumnDirection);
+                    //list = list.OrderBy(sortColumn + " " + sortColumnDirection);
                 }
                 //Search  
                 if (!string.IsNullOrEmpty(searchValue))
                 {
-                    //testData = customerData.Where(m => m.Name == searchValue);
+                    list = list.Where(m => m.Name.Contains(searchValue) || m.Mission.Contains(searchValue)).ToList();
                 }
 
                 //total number of rows count   
-                recordsTotal = testData.Count();
+                recordsTotal = list.Count();
                 //Paging   
-                var data = testData.Skip(skip).Take(pageSize).ToList();
+                var data = list.Skip(skip).Take(pageSize).ToList();
                 //Returning Json Data  
                 return Json(new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = data });
 
@@ -81,6 +84,74 @@ namespace Playground.Controllers
             {
                 throw;
             }
+        }
+
+        [HttpGet]
+        public IActionResult Add()
+        {
+            var model = new Organization();
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Add(Organization model)
+        {
+            if (ModelState.IsValid)
+            {
+                model.CreatedDate = DateTime.Now;
+                model = _context.Organizations.Add(model).Entity;
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult AddFake()
+        {
+
+            var fake = new Faker<Organization>()
+                .RuleFor(u => u.Name, f => f.Company.CompanyName())
+                .RuleFor(u => u.Mission, f => f.Company.CatchPhrase())
+                .Generate();
+
+            var model = new Organization()
+            {
+                Name = fake.Name,
+                Mission = fake.Mission,
+                CreatedDate = DateTime.Now
+            };
+
+            model = _context.Organizations.Add(model).Entity;
+            _context.SaveChanges();
+
+            return View("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Add100Fake()
+        {
+            var list = new List<Organization>();
+            for (int i = 0; i < 100; i++)
+            {
+                var fake = new Faker<Organization>()
+                    .RuleFor(u => u.Name, f => f.Company.CompanyName())
+                    .RuleFor(u => u.Mission, f => f.Company.CatchPhrase())
+                    .Generate();
+
+                var model = new Organization()
+                {
+                    Name = fake.Name,
+                    Mission = fake.Mission,
+                    CreatedDate = DateTime.Now
+                };
+                list.Add(model);
+            }
+
+
+            _context.Organizations.AddRange(list);
+            _context.SaveChanges();
+
+            return View("Index");
         }
     }
 }

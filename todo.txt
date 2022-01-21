@@ -1,4 +1,6 @@
 ﻿Todos:
+use feather icons
+sortable list https://jsbin.com/visimub/edit?html,js,output
 finish organization crud
 make datatables look nice
 create todo crud for this app?

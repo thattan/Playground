@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Playground.Models
+namespace Playground.Data
 {
     [Table("Organizations")]
     public class Organization

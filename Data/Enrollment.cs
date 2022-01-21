@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Playground.Models
+namespace Playground.Data
 {
     public enum Grade
     {

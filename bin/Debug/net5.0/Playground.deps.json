@@ -33,12 +33,14 @@
     ".NETCoreApp,Version=v5.0": {
       "Playground/1.0.0": {
         "dependencies": {
+          "Bogus": "34.0.1",
           "Handlebars.Net": "2.0.9",
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "5.0.0",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "5.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.0",
+          "Moment.js": "2.29.1",
           "Newtonsoft.Json": "13.0.1",
           "PokeApiNet": "3.0.3",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
@@ -330,6 +332,17 @@
         },
         "compile": {
           "Playground.dll": {}
+        }
+      },
+      "Bogus/34.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Bogus.dll": {
+            "assemblyVersion": "34.0.1.0",
+            "fileVersion": "34.0.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Bogus.dll": {}
         }
       },
       "Handlebars.Net/2.0.9": {
@@ -885,6 +898,7 @@
           "Microsoft.NETCore.Platforms": "3.1.0"
         }
       },
+      "Moment.js/2.29.1": {},
       "NETStandard.Library/1.6.1": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -3536,6 +3550,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Bogus/34.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-49iq7QrD0wb7V4/FcK8p3dWdJxNUbojaqK9L6KRvdikIuRjt38EsNp7QXICcYdbYw01K8BHUdxlnTNn/YX3qDA==",
+      "path": "bogus/34.0.1",
+      "hashPath": "bogus.34.0.1.nupkg.sha512"
+    },
     "Handlebars.Net/2.0.9": {
       "type": "package",
       "serviceable": true,
@@ -3829,6 +3850,13 @@
       "sha512": "sha512-mtVirZr++rq+XCDITMUdnETD59XoeMxSpLRIII7JRI6Yj0LEDiO1pPn0ktlnIj12Ix8bfvQqQDMMIF9wC98oCA==",
       "path": "microsoft.win32.systemevents/4.7.0",
       "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
+    },
+    "Moment.js/2.29.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CSpZfBYACe5QBFtPRv7k6IS5TZmdcisKFIRdQee1ZINjKl05AlSCTaXn/bo25XUnD82L0vvdEJXH+uv3nKeaiA==",
+      "path": "moment.js/2.29.1",
+      "hashPath": "moment.js.2.29.1.nupkg.sha512"
     },
     "NETStandard.Library/1.6.1": {
       "type": "package",
