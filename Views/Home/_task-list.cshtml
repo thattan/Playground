@@ -1,0 +1,16 @@
+﻿@model List<Playground.Data.Task>;
+@{
+
+}
+
+<div id="simpleList" class="list-group">
+    @foreach (var task in Model)
+    {
+        <div class="list-group-item" data-task-id="@task.Id">
+            <div>
+                <div class="list-message" style="max-width: 80%; float: left;">@task.Text</div>
+                <input class="form-check-input list-check" type="checkbox" value="" style="right: 3%;">
+            </div>
+        </div>
+    }
+</div>

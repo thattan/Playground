@@ -2,24 +2,57 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <button class="btn btn-primary" id="toastrTest">Toastr Test</button>
-</div>
+<script src="../Scripts/TaskList.js"></script>
+<script src="https://unpkg.com/feather-icons"></script>
+@*<div class="text-center">
+        <button class="btn btn-primary" id="toastrTest">Toastr Test</button>
+    </div>*@
 
-<div id="simpleList" class="list-group">
-    <div class="list-group-item">This is <a href="http://rubaxa.github.io/Sortable/">Sortable</a></div>
-    <div class="list-group-item">It works with Bootstrap...</div>
-    <div class="list-group-item">...out of the box.</div>
-    <div class="list-group-item">It has support for touch devices.</div>
-    <div class="list-group-item">Just drag some elements around.</div>
+<style>
+    .feather {
+        width: 32px;
+        height: 32px;
+        margin-top: 100%;
+    }
+</style>
+
+<div class="row">
+    <div class="col-4">
+        <div class="row">
+            <div class="col mt-4">
+                <h6>Playground Site: Small Projects</h6>
+            </div>
+        </div>
+    </div>
+    <div class="offset-6 col-6">
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group">
+                    <h6>Manage Tasks</h6>
+                    <textarea cols="60" rows="2" id="task-message" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="col">
+                <a href=""><i data-feather="plus" class="feather" id="plus" title="Add Message"></i></a>                
+            </div>
+            <div class="col">
+                <a href=""><i data-feather="save" class="feather" id="save"></i></a>
+            </div>
+            <div class="col">
+                <a href=""><i data-feather="trash" class="feather" id="delete"></i></a>
+            </div>
+        </div>
+        <div class="row">
+            <div id="task-list" style="min-width: 600px;">
+
+            </div>
+        </div>
+    </div>
 </div>
 
 @section Scripts {
     <script>
         $(function () {
-            Sortable.create(simpleList, { /* options */ });
 
             $('#toastrTest').on('click', function () {
                 toastr.success('test');
