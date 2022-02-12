@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9lhH4peolTs2e0WmTHKirfh37ACIPwspewRe9zRcyzz30CdYZOEnG4U4omB/KwblpUr+9Z+G4QfUFomNVIXP8w==",
+  "dgSpecHash": "oZEondMNACWCOYg7hLGmDD1iaUSkpA4/UVa+tAz6brLzKkWL1DJwCCu0et4vz3zH+Iz/U81eP6koQl+Cz1zPvQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\tyler\\Desktop\\Coding2021\\Playground\\Playground.csproj",
   "expectedPackageFiles": [
@@ -150,7 +150,8 @@
     "C:\\Users\\tyler\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\tyler\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\tyler\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\tyler\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\tyler\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\tyler\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
   ],
   "logs": []
 }

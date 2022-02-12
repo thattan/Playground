@@ -18,7 +18,6 @@ C:\Users\tyler\Desktop\Coding2021\Playground\obj\Debug\net5.0\Playground.MvcAppl
 C:\Users\tyler\Desktop\Coding2021\Playground\obj\Debug\net5.0\Playground.RazorAssemblyInfo.cache
 C:\Users\tyler\Desktop\Coding2021\Playground\obj\Debug\net5.0\Playground.RazorAssemblyInfo.cs
 C:\Users\tyler\Desktop\Coding2021\Playground\obj\Debug\net5.0\staticwebassets\Playground.StaticWebAssets.Manifest.cache
-C:\Users\tyler\Desktop\Coding2021\Playground\obj\Debug\net5.0\staticwebassets\Playground.StaticWebAssets.xml
 C:\Users\tyler\Desktop\Coding2021\Playground\obj\Debug\net5.0\scopedcss\bundle\Playground.styles.css
 C:\Users\tyler\Desktop\Coding2021\Playground\obj\Debug\net5.0\Playground.TagHelpers.input.cache
 C:\Users\tyler\Desktop\Coding2021\Playground\obj\Debug\net5.0\Playground.TagHelpers.output.cache
@@ -401,3 +400,4 @@ C:\Users\tyler\Desktop\Coding2021\Playground\obj\Debug\net5.0\Razor\Views\Organi
 C:\Users\tyler\Desktop\Coding2021\Playground\obj\Debug\net5.0\Playground.csproj.AssemblyReference.cache
 C:\Users\tyler\Desktop\Coding2021\Playground\bin\Debug\net5.0\Bogus.dll
 C:\Users\tyler\Desktop\Coding2021\Playground\obj\Debug\net5.0\Razor\Views\Home\_task-list.cshtml.g.cs
+C:\Users\tyler\Desktop\Coding2021\Playground\bin\Debug\net5.0\Playground.StaticWebAssets.xml
