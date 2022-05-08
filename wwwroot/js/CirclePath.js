@@ -2,41 +2,28 @@
 var yCoords = [];
 
 $(document).ready(function () {
+    createCircle(400, 200);
+    createCircle(500, 200);
+    createLine(xCoords[0], xCoords[1], yCoords[0], yCoords[1]);
+
     $('.line-area').click(function (e) {
         var xCoord = 0;
         var yCoord = 0;
         xCoord = e.clientX;
         yCoord = e.clientY;
 
-        var circle = document.createElement("div");
-        circle.classList.add("circle");
-        circle.style.borderRadius = "50%"; //Make div a circle
-        circle.style.height = "25px";
-        circle.style.width = "25px";
-        circle.style.backgroundColor = "black";
-        circle.style.position = "absolute";
-
-        var startPositionX = xCoord - 12.5 - 384; // Circles radius is 12.5, changing start position allows circle center to be at the click
-        var startPositionY = yCoord - 12.5 - 184;
-
-
-        circle.style.left = "" + startPositionX + "px";
-        circle.style.top = "" + startPositionY + "px";
-
-        $(".line-area").append(circle);
-
-        xCoords.push(xCoord);
-        yCoords.push(yCoord);
-
-        /*alert("" + xCoord + " " + yCoord);*/
+        createCircle(xCoord, yCoord);
     });
 
     $('#draw-btn').click(function (e) {
+        $(".line").remove();
+
         var tempXCoords = xCoords;
         var tempYCoords = yCoords;
         var nextIndexToCheck = -1; // initial value doesn't matter
         // next index to check is the index that the
         // line ends at so it makes a continuous line
+        debugger;
         for (i = 0; i < xCoords.length; i++) { // 0(N)  loop over coordinate array n times
             var xCoord = -1;
             var yCoord = -1;
@@ -89,30 +76,46 @@ $(document).ready(function () {
     })
 
     function createLine(x1, x2, y1, y2) {
-        var distance = Math.sqrt(((x1 - x2) * (x1 - x2)) + ((y1 - y2) * (y1 - y2)));
+        x1 += 12.5;
+        x2 += 12.5;
+        y1 += 12.5;
+        y2 += 12.5;
+ 
+        var length = Math.sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
+        // center
+        var cx = ((x1 + x2) / 2) - (length / 2);
+        var cy = ((y1 + y2) / 2) - (5 / 2);
+        // angle
+        var angle = Math.atan2((y1 - y2), (x1 - x2)) * (180 / Math.PI);
+        // make hr
+        var htmlLine = "<div class='line' style='padding:0px; margin:0px; height:" + 5 + "px; background-color: black; line-height:1px; position:absolute; left:" + cx + "px; top:" + cy + "px; width:" + length + "px; -moz-transform:rotate(" + angle + "deg); -webkit-transform:rotate(" + angle + "deg); -o-transform:rotate(" + angle + "deg); -ms-transform:rotate(" + angle + "deg); transform:rotate(" + angle + "deg);' />";
+        $('.line-area').append(htmlLine)
+    }
 
-        var xMid = (x1 + x2) / 2;
-        var yMid = (y1 + y2) / 2;
+    function createCircle(xCoord, yCoord) {
+        var circle = document.createElement("div");
+        circle.classList.add("circle");
+        circle.style.borderRadius = "50%"; //Make div a circle
+        circle.style.height = "25px";
+        circle.style.width = "25px";
+        circle.style.backgroundColor = "black";
+        circle.style.position = "absolute";
 
-        var slopeInRadians = Math.atan2(y1 - y2, x1 - x2);
-        var slopeInDegrees = (slopeInRadians * 180) / Math.PI;
+        var finalX = xCoord - 12.5 - 384;
+        var finalY = yCoord - 12.5 - 184
 
-        var div = '<div class="line" style=" ';
-        div += 'width: ' + distance + 'px; ';
-        div += 'top: ' + yMid + 'px; ';
-        div += 'left:' + xMid - (distance / 2) + 'px; ';
-        div += 'transform: rotate(' + slopeInDegrees + 'deg); "></div>';
+        var startPositionX = finalX; // Circles radius is 12.5, changing start position allows circle center to be at the click
+        var startPositionY = finalY;
 
 
-        $('.line-area').append(div);
-        //var line = document.createElement('div');
-        //document.getElementsByClassName('line-area')[0].appendChild(line);
-        //line.className = "line";
-        //line.style.width = distance;
-        //line.style.top = yMid;
-        //line.style.left = xMid - (distance / 2);
-        //line.style.transform = "rotate(" + slopeInDegrees + "deg)";
+        circle.style.left = "" + startPositionX + "px";
+        circle.style.top = "" + startPositionY + "px";
 
-        
+        $(".line-area").append(circle);
+
+        xCoords.push(finalX);
+        yCoords.push(finalY);
+
+       /* alert("" + xCoord + " " + yCoord);*/
     }
 });
