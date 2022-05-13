@@ -4,7 +4,9 @@ var yCoords = [];
 $(document).ready(function () {
     createCircle(400, 200);
     createCircle(500, 200);
-    createLine(xCoords[0], xCoords[1], yCoords[0], yCoords[1]);
+    createCircle(400, 500);
+    createCircle(500, 500);
+    connectDots();
 
     $('.line-area').click(function (e) {
         var xCoord = 0;
@@ -16,57 +18,11 @@ $(document).ready(function () {
     });
 
     $('#draw-btn').click(function (e) {
-        $(".line").remove();
+        connectDots();
+    });
 
-        var tempXCoords = xCoords;
-        var tempYCoords = yCoords;
-        var nextIndexToCheck = -1; // initial value doesn't matter
-        // next index to check is the index that the
-        // line ends at so it makes a continuous line
-        debugger;
-        for (i = 0; i < xCoords.length; i++) { // 0(N)  loop over coordinate array n times
-            var xCoord = -1;
-            var yCoord = -1;
-
-            if (i == 0) {
-                xCoord = xCoords[i];
-                yCoord = yCoords[i];
-            } else {
-                xCoord = xCoords[nextIndexToCheck];
-                yCoord = yCoords[nextIndexToCheck];
-            }
-
-            var shortestLengthATM = -1;
-            var shortestLengthIndexATM = -1; // initial value doesn't matter
-            
-            for (y = 0; y < tempXCoords.length; y++) { // 0(N^2)
-                if (i == y) {
-                    continue;
-                } else if (tempXCoords[y] == -1) {
-                    continue;
-                }
-
-                var tempX = xCoords[y];
-                var tempY = yCoords[y];
-                var hypotenuse = Math.sqrt(Math.abs(tempX - xCoord) ^ 2 + Math.abs(tempY - yCoord) ^ 2);
-
-                if (y == 1) {
-                    shortestLengthIndexATM = 1;
-                    shortestLengthATM = hypotenuse;
-                } else {
-                    if (hypotenuse < shortestLengthATM) {
-                        shortestLengthATM = hypotenuse;
-                        shortestLengthIndexATM = y;
-                    }
-                }
-            }
-            createLine(xCoord, tempXCoords[shortestLengthIndexATM], yCoord, tempYCoords[shortestLengthIndexATM]);
-            if (i != 0) {
-                tempXCoords[shortestLengthIndexATM] = -1;
-                tempYCoords[shortestLengthIndexATM] = -1;
-            }
-            nextIndexToCheck = shortestLengthIndexATM;
-        }
+    $('#exp-btn').click(function (e) {
+        explosion();
     });
 
     $('.clear-btn').on('click', function () {
@@ -80,7 +36,7 @@ $(document).ready(function () {
         x2 += 12.5;
         y1 += 12.5;
         y2 += 12.5;
- 
+
         var length = Math.sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
         // center
         var cx = ((x1 + x2) / 2) - (length / 2);
@@ -116,6 +72,116 @@ $(document).ready(function () {
         xCoords.push(finalX);
         yCoords.push(finalY);
 
-       /* alert("" + xCoord + " " + yCoord);*/
+        /* alert("" + xCoord + " " + yCoord);*/
+    }
+
+    function connectDots() {
+        $(".line").remove();
+
+        var tempXCoords = xCoords;
+        var tempYCoords = yCoords;
+        var nextIndexToCheck = -1; // initial value doesn't matter
+        // next index to check is the index that the
+        // line ends at so it makes a continuous line
+        for (i = 0; i < xCoords.length; i++) { // 0(N)  loop over coordinate array n times
+            var xCoord = -1;
+            var yCoord = -1;
+
+            if (i == 0) {
+                xCoord = xCoords[i];
+                yCoord = yCoords[i];
+            } else {
+                xCoord = xCoords[nextIndexToCheck];
+                yCoord = yCoords[nextIndexToCheck];
+            }
+
+            var shortestLengthATM = -1;
+            var shortestLengthIndexATM = -1; // initial value doesn't matter
+
+            for (y = 0; y < tempXCoords.length; y++) { // 0(N^2)
+
+                //TODO change i to shortest index atm?
+                if (i == y || y == 0) {
+                    continue;
+                } else if (tempXCoords[y] == -1) {
+                    continue;
+                }
+
+                var tempX = xCoords[y];
+                var tempY = yCoords[y];
+                var hypotenuse = Math.sqrt(Math.abs(tempX - xCoord) ^ 2 + Math.abs(tempY - yCoord) ^ 2);
+
+                if (shortestLengthATM == -1) {
+                    shortestLengthIndexATM = y;
+                    shortestLengthATM = hypotenuse;
+                } else {
+                    if (hypotenuse < shortestLengthATM) {
+                        shortestLengthATM = hypotenuse;
+                        shortestLengthIndexATM = y;
+                    }
+                }
+            }
+            createLine(xCoord, tempXCoords[shortestLengthIndexATM], yCoord, tempYCoords[shortestLengthIndexATM]);
+            if (i != 0) {
+                tempXCoords[shortestLengthIndexATM] = -1;
+                tempYCoords[shortestLengthIndexATM] = -1;
+            }
+            nextIndexToCheck = shortestLengthIndexATM;
+        }
+    }
+
+    function explosion() {
+        $(".line").remove();
+
+        var tempXCoords = xCoords;
+        var tempYCoords = yCoords;
+        var nextIndexToCheck = -1; // initial value doesn't matter
+        // next index to check is the index that the
+        // line ends at so it makes a continuous line
+        for (i = 0; i < xCoords.length; i++) { // 0(N)  loop over coordinate array n times
+            var xCoord = -1;
+            var yCoord = -1;
+
+            if (i == 0) {
+                xCoord = xCoords[i];
+                yCoord = yCoords[i];
+            } else {
+                xCoord = xCoords[nextIndexToCheck];
+                yCoord = yCoords[nextIndexToCheck];
+            }
+
+            var shortestLengthATM = -1;
+            var shortestLengthIndexATM = -1; // initial value doesn't matter
+
+            for (y = 0; y < tempXCoords.length; y++) { // 0(N^2)
+
+                //TODO change i to shortest index atm?
+                if (i == y || y == 0) {
+                    continue;
+                } else if (tempXCoords[y] == -1) {
+                    continue;
+                }
+
+                var tempX = xCoords[y];
+                var tempY = yCoords[y];
+                var hypotenuse = Math.sqrt(Math.abs(tempX - xCoord) ^ 2 + Math.abs(tempY - yCoord) ^ 2);
+
+                if (shortestLengthATM == -1) {
+                    shortestLengthIndexATM = y;
+                    shortestLengthATM = hypotenuse;
+                } else {
+                    if (hypotenuse < shortestLengthATM) {
+                        shortestLengthATM = hypotenuse;
+                        shortestLengthIndexATM = y;
+                    }
+                }
+            }
+            createLine(xCoord, tempXCoords[shortestLengthIndexATM], yCoord, tempYCoords[shortestLengthIndexATM]);
+            if (i != 0) {
+                tempXCoords[shortestLengthIndexATM] = -1;
+                tempYCoords[shortestLengthIndexATM] = -1;
+            }
+            nextIndexToCheck = shortestLengthIndexATM;
+        }
     }
 });
