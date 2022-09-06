@@ -1,0 +1,77 @@
+[33mcommit a2e0b9587496199fd2347fa155c4be1171aa515d[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Tyler Hattan <tylerhattan@yahoo.com>
+Date:   Thu May 12 19:27:25 2022 -0500
+
+    about to install another version .net sdk
+
+[33mcommit 046d0a8b44bb0e371e93d26e311093c1691f8297[m
+Author: Tyler Hattan <tylerhattan@yahoo.com>
+Date:   Sat May 7 23:14:54 2022 -0500
+
+    after move to A drive, progress on connect the dots. ssms is working still after delete. need to make new db. about to change connect the dots solver
+
+[33mcommit ed36cda27691b7e4b9fc1cbce939bcf90392d506[m
+Author: Tyler Hattan <tylerhattan@yahoo.com>
+Date:   Sat Feb 12 17:43:03 2022 -0600
+
+    using VS 2022 now, about to add vue
+
+[33mcommit 35bd279e464432de18840a687f19a6a78fa97d93[m
+Author: Tyler Hattan <tylerhattan@yahoo.com>
+Date:   Sun Jan 23 17:27:13 2022 -0600
+
+    Task list on home page
+
+[33mcommit 46590aa55b7bdf834fa1f38d6c70e0ed045752ce[m
+Author: Tyler Hattan <tylerhattan@yahoo.com>
+Date:   Fri Jan 21 00:21:22 2022 -0600
+
+    added organization crud work, added bogus package for fake data, started work for task crud
+
+[33mcommit 9fe2094914cdbba5ba8c397ce3f7891ccdfe07c4[m
+Author: Tyler Hattan <tylerhattan@yahoo.com>
+Date:   Mon Jan 17 19:28:09 2022 -0600
+
+    added todo.txt for todos at this time
+
+[33mcommit d555df2dd1bc30e1fb0d7e283a95f18420a7de79[m
+Author: Tyler Hattan <tylerhattan@yahoo.com>
+Date:   Mon Jan 17 19:17:20 2022 -0600
+
+    added Organization and OrganizationUsers tables, added datatable library to layout file, added multiple things to the start up file for better development
+
+[33mcommit 1779a0c8f767b6c62110b4daea6679922adc5319[m
+Author: tyler hattan <tylerhattan@yahoo.com>
+Date:   Sat Jan 15 00:54:17 2022 -0600
+
+    added dependancy injection for db context, added example use in pokemoncontroller, added DbInitializer which seeds data if tables are empty. db connection and crud works now and migrations, site is working
+
+[33mcommit 76496e129b9205b7849009ab8c4c504ec867cdb8[m
+Author: tyler hattan <tylerhattan@yahoo.com>
+Date:   Sat Jan 15 00:31:30 2022 -0600
+
+    added entity framework and ran first migration, site is working
+
+[33mcommit 5e535337b662aec3db1455202be928ef9332af73[m
+Author: tyler hattan <tylerhattan@yahoo.com>
+Date:   Fri Jan 14 20:00:47 2022 -0600
+
+    this commit works, added blazor startup stuff still needs reference to js in layout file
+
+[33mcommit 7f9dcc6da71d8dfdff3efe007329d10ddf99f113[m
+Author: tyler hattan <tylerhattan@yahoo.com>
+Date:   Sun Oct 10 01:28:53 2021 -0500
+
+    first commit with small projects
+
+[33mcommit 9d671763613dfcf34b7af7d40396bae4ce83f13a[m
+Author: thattan <49776965+thattan@users.noreply.github.com>
+Date:   Sun Oct 10 00:49:20 2021 -0500
+
+    Create test
+
+[33mcommit 20313191e44a77de5a6da2b40c80a2166db03c71[m
+Author: thattan <49776965+thattan@users.noreply.github.com>
+Date:   Sun Oct 10 00:47:44 2021 -0500
+
+    Initial commit

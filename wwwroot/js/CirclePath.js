@@ -43,7 +43,7 @@ $(document).ready(function () {
         var cy = ((y1 + y2) / 2) - (5 / 2);
         // angle
         var angle = Math.atan2((y1 - y2), (x1 - x2)) * (180 / Math.PI);
-        // make hr
+        // make linw
         var htmlLine = "<div class='line' style='padding:0px; margin:0px; height:" + 5 + "px; background-color: black; line-height:1px; position:absolute; left:" + cx + "px; top:" + cy + "px; width:" + length + "px; -moz-transform:rotate(" + angle + "deg); -webkit-transform:rotate(" + angle + "deg); -o-transform:rotate(" + angle + "deg); -ms-transform:rotate(" + angle + "deg); transform:rotate(" + angle + "deg);' />";
         $('.line-area').append(htmlLine)
     }
